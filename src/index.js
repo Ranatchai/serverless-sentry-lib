@@ -402,7 +402,7 @@ class RavenLambdaWrapper {
 
 					// And finally invoke the original handler code
 					const promise = handler(event, context, callback);
-					if (promise && _.isFunction(promise.then) && !callback) {
+					if (promise && _.isFunction(promise.then)) {
 						// don't forget to stop timers
 						return promise
 						.then((...data) => {
